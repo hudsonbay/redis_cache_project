@@ -3,16 +3,11 @@ defmodule RedisCacheProject do
   Documentation for `RedisCacheProject`.
   """
 
-  @doc """
-  Hello world.
+  alias Redis.Server
 
-  ## Examples
+  def get(key), do: Server.get(key)
 
-      iex> RedisCacheProject.hello()
-      :world
+  def set(key, value), do: Server.set(key, value)
 
-  """
-  def hello do
-    :world
-  end
+  def delete(key), do: Server.delete(key)
 end
