@@ -8,8 +8,7 @@ defmodule RedisCacheProject.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: RedisCacheProject.Worker.start_link(arg)
-      # {RedisCacheProject.Worker, arg}
+      {Redix, {"redis://127.0.0.1:6379", [name: :redis_server]}}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
